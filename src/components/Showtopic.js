@@ -20,7 +20,7 @@ class Showtopic extends Component {
         </div>
         <span> · 发布于 1 个月前 · 作者 {a.author.loginname} · {a.visit_count} 次浏览量 </span>
         <hr/>
-        <div dangerouslySetInnerHTML={createMarkup()} />
+        <Content dangerouslySetInnerHTML={createMarkup()} />
       </Wrapper>
       </div>
     );
@@ -33,4 +33,12 @@ background-color:#fff;
   margin:15px;
   padding:10px;
   width:70%;
+`
+const Content = styled.div`
+  img{
+    width:100%;
+  }
+  p{
+    line-height:30px;
+  }
 `
