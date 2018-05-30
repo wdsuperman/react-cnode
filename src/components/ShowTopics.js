@@ -34,9 +34,8 @@ class ShowTopics extends Component {
   }
   render() {
     const { topics } = this.state
-    console.log(topics)
     const topicsList = topics.length === 0 ? '等一哈': topics.map( topic => <List key={topic.id}>
-      <img style={{width:'40px'}} src={topic.author.avatar_url} alt=""/>
+    <Link to={{user:`/user/${topic.loginname}`,state:topics.filter(t => t.id === topic.author_id)}}><img style={{width:'40px'}} src={topic.author.avatar_url} alt=""/></Link>
       <div style={{width:'100px',textAlign: 'center'}}>
         <span title='回复数'>{topic.reply_count}</span>
         /
